@@ -1,0 +1,112 @@
+/*
+ * BacaKu Design Tokens
+ * Central source-of-truth for all visual properties.
+ * Light theme with white and blue palette.
+ */
+
+:root {
+  /* Palette — Backgrounds (White and Blue) */
+  --bg-base: #FFFFFF; /* Pure white background */
+  --bg-surface: #FFFFFF;
+  --bg-raised: #FFFFFF;
+  --bg-elevated: #F3F6FC; /* Very light blue for elevated */
+  --bg-overlay: rgba(32, 33, 36, 0.6);
+  --bg-active-sidebar: #E8F0FE; /* Google light blue active */
+
+  /* Custom App Colors */
+  --color-google-purple: #A16BFE;
+  --color-google-green: #34A853;
+  --color-google-blue: #0A56D0;
+  --color-fab: #0A56D0; /* Blue FAB instead of orange */
+
+  /* Palette — Text */
+  --text-primary: #1F1F1F;
+  --text-secondary: #444746;
+  --text-muted: #747775;
+  --text-inverse: #FFFFFF;
+
+  /* Palette — Brand (Authentic Google Blue) */
+  --color-primary: #0B57D0;
+  --color-primary-dim: #0842A0;
+  --color-primary-glow: rgba(11, 87, 208, 0.08);
+  --color-secondary: #00639B;
+  --color-secondary-dim: #004A77;
+  --color-accent: #B3261E;
+
+  /* Palette — Semantic */
+  --color-success: #146C2E;
+  --color-warning: #B3261E;
+  --color-error: #B3261E;
+  --color-info: #0B57D0;
+
+  /* Borders */
+  --border-subtle: #E0E2E0;
+  --border-default: #C4C7C5;
+  --border-strong: #747775;
+
+  /* Typography */
+  --font-heading: 'Google Sans', 'Google Sans Flex', system-ui, sans-serif;
+  --font-body: 'Google Sans', 'Google Sans Flex', system-ui, sans-serif;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+
+  --leading-tight: 1.25;
+  --leading-normal: 1.6;
+  --leading-relaxed: 1.8;
+
+  /* Spacing (4px base grid) */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+
+  /* Radii (M3 Scale) */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.4);
+  --shadow-glow: 0 0 20px var(--color-primary-glow);
+
+  /* Motion */
+  --duration-fast: 150ms;
+  --duration-normal: 250ms;
+  --duration-slow: 400ms;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.45, 0, 0.55, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* Layout */
+  --sidebar-width: 260px;
+  --header-height: 72px;
+  --content-max-width: 720px;
+  --page-max-width: 1200px;
+
+  /* Z-index layers */
+  --z-base: 0;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-overlay: 300;
+  --z-modal: 400;
+  --z-toast: 500;
+}
