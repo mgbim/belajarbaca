@@ -2697,16 +2697,22 @@ h4 {
 @media (max-width: 768px) {
   .ra-layout {
     flex-direction: column;
+    overflow-y: auto;
   }
   .ra-sidebar {
     width: 100%;
-    padding: 1rem 1rem 80px 1rem;
+    order: 2;
+    padding: 2rem 1rem 240px 1rem;
     box-shadow: none;
     border-right: none;
-    border-bottom: 1px solid var(--border-default);
+    border-top: 1px solid var(--border-default);
+    overflow-y: visible;
+    height: auto;
   }
   .ra-main {
-    padding: 1rem 1rem 220px 1rem;
+    order: 1;
+    padding: 2rem 1rem 2rem 1rem;
+    overflow-y: visible;
   }
   .ra-title {
     font-size: 1.75rem;
