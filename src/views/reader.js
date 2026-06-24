@@ -85,11 +85,11 @@ export function renderReader(container) {
               <h1 class="reader__section-title">${topic}</h1>
             </div>
             
-            <div style="margin-bottom: 2rem; display: flex; justify-content: flex-start; gap: 12px; align-items: center; flex-wrap: wrap; width: 100%;">
-               <button id="btn-global-read-aloud" onclick="window.startReadAlongMode()" style="padding: 10px 20px; background: var(--color-primary); color: white; border: none; border-radius: 24px; font-weight: 600; font-size: 0.95rem; cursor: pointer; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 10px rgba(11, 87, 208, 0.2); transition: all 0.2s;">
+            <div class="reader-actions-container">
+               <button id="btn-global-read-aloud" onclick="window.startReadAlongMode()" class="reader-action-btn reader-action-btn--primary">
                   <span class="material-symbols-outlined">record_voice_over</span> Mode Membaca Nyaring
                </button>
-               <button onclick="if(window.openAiDiscussion) window.openAiDiscussion()" style="padding: 10px 20px; background: linear-gradient(135deg, #a855f7, #6366f1); color: white; border: none; border-radius: 24px; font-weight: 600; font-size: 0.95rem; cursor: pointer; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 10px rgba(99,102,241,0.3); transition: all 0.2s;">
+               <button onclick="if(window.openAiDiscussion) window.openAiDiscussion()" class="reader-action-btn reader-action-btn--secondary">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path><line x1="12" y1="9" x2="12" y2="15"></line><line x1="9" y1="12" x2="15" y2="12"></line></svg> Teman Diskusi
                </button>
             </div>
@@ -477,11 +477,11 @@ function renderSection(section, allSections, activeIndex) {
       <div class="reader__title-container" style="justify-content: flex-start; width: 100%;">
         <h1 class="reader__section-title" style="color: var(--color-primary); font-size: 2.5rem; margin: 0; text-align: left;">${section.title}</h1>
       </div>
-      <div style="margin-bottom: 2rem; margin-top: 1rem; display: flex; justify-content: flex-start; gap: 12px; align-items: center; flex-wrap: wrap; width: 100%;">
-         <button id="btn-global-read-aloud" style="padding: 10px 20px; background: var(--color-primary); color: white; border: none; border-radius: 24px; font-weight: 600; font-size: 0.95rem; cursor: pointer; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 10px rgba(11, 87, 208, 0.2); transition: all 0.2s;">
+      <div class="reader-actions-container" style="margin-top: 1rem;">
+         <button id="btn-global-read-aloud" class="reader-action-btn reader-action-btn--primary">
             <span class="material-symbols-outlined">record_voice_over</span> Mode Membaca Nyaring
          </button>
-         <button onclick="if(window.openAiDiscussion) window.openAiDiscussion()" style="padding: 10px 20px; background: linear-gradient(135deg, #a855f7, #6366f1); color: white; border: none; border-radius: 24px; font-weight: 600; font-size: 0.95rem; cursor: pointer; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 10px rgba(99,102,241,0.3); transition: all 0.2s;">
+         <button onclick="if(window.openAiDiscussion) window.openAiDiscussion()" class="reader-action-btn reader-action-btn--secondary">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path><line x1="12" y1="9" x2="12" y2="15"></line><line x1="9" y1="12" x2="15" y2="12"></line></svg> Teman Diskusi
          </button>
       </div>
