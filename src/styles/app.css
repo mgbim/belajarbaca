@@ -2692,3 +2692,38 @@ h4 {
     font-size: 1.25rem;
   }
 }
+
+/* --- Mobile Responsiveness for Read Along (Mode Membaca Nyaring) --- */
+@media (max-width: 768px) {
+  .ra-layout {
+    flex-direction: column;
+  }
+  .ra-sidebar {
+    width: 100%;
+    padding: 1rem 1rem 80px 1rem;
+    box-shadow: none;
+    border-right: none;
+    border-bottom: 1px solid var(--border-default);
+  }
+  .ra-main {
+    padding: 1rem 1rem 220px 1rem;
+  }
+  .ra-title {
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+  }
+  .ra-sentence {
+    font-size: 1.25rem;
+    line-height: 1.8;
+  }
+  .ra-header-title {
+    font-size: 1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  /* Improve bottom control bar spacing on narrow screens */
+  #read-aloud-footer > div {
+    gap: 16px !important;
+  }
+}
