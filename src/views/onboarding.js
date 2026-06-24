@@ -16,8 +16,8 @@ const STEPS = [
               aria-label="${opt.label}" data-value="${opt.id}">
         <span class="onboarding__option-icon" aria-hidden="true">
           ${opt.flagCode 
-            ? `<img src="https://flagcdn.com/w160/${opt.flagCode}.png" alt="Bendera ${opt.label}" style="width: 44px; height: 32px; object-fit: cover; border-radius: 4px; border: 1px solid rgba(0,0,0,0.1); display: block; margin: 0 auto;">` 
-            : `<span class="material-symbols-outlined" aria-hidden="true" style="font-size: 44px; color: var(--color-primary);">${opt.icon}</span>`}
+            ? `<img src="https://flagcdn.com/w160/${opt.flagCode}.png" alt="Bendera ${opt.label}" class="opt-flag-img">` 
+            : `<span class="material-symbols-outlined opt-icon" aria-hidden="true">${opt.icon}</span>`}
         </span>
         ${opt.label}
       </button>`,
@@ -35,9 +35,9 @@ const STEPS = [
       return `
       <button class="onboarding__option" role="radio" aria-checked="false" tabindex="-1"
               aria-label="${opt.label}" data-value="${opt.id}">
-        <span style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: 800; color: var(--color-primary); line-height: 1;">${code}</span>
-        <strong style="font-size: 0.9375rem; color: var(--text-primary);">${title}</strong>
-        <span style="font-size: 0.8125rem; color: var(--text-secondary); line-height: 1.25;">${opt.desc}</span>
+        <span class="opt-level-code">${code}</span>
+        <strong class="opt-level-title">${title}</strong>
+        <span class="opt-level-desc">${opt.desc}</span>
       </button>`;
     },
   },
@@ -50,7 +50,7 @@ const STEPS = [
       <button class="onboarding__option" role="radio" aria-checked="false" tabindex="-1"
               aria-label="${opt.label}" data-value="${opt.id}">
         <span class="onboarding__option-icon">
-          <span class="material-symbols-outlined" aria-hidden="true" style="font-size: 40px; color: var(--color-primary);">${opt.icon}</span>
+          <span class="material-symbols-outlined opt-icon" aria-hidden="true">${opt.icon}</span>
         </span>
         ${opt.label}
       </button>`,
@@ -74,7 +74,7 @@ export function renderOnboarding(container) {
     container.innerHTML = `
       <div class="onboarding" role="region" aria-label="Selamat Datang" style="justify-content: center; padding-top: 0; min-height: 100vh; position: relative; overflow: hidden; background: var(--surface-default);">
         
-        <div style="position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; text-align: center; max-width: 600px; margin: 0 auto;">
+        <div class="welcome-container">
           <div style="margin-bottom: 2rem;">
             <svg width="80" height="80" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" style="isolation: isolate; margin: 0 auto; overflow: visible;">
               <title>BelajarBaca Logo</title>
@@ -88,12 +88,12 @@ export function renderOnboarding(container) {
               </g>
             </svg>
           </div>
-          <h1 style="font-family: var(--font-heading); font-size: 3.5rem; font-weight: 800; color: var(--text-primary); letter-spacing: -0.04em; margin-bottom: 0.5rem; line-height: 1.1; opacity: 0; animation: fadeUp var(--duration-slow) var(--ease-out) 1s forwards;">
-            Belajar<span style="color: var(--color-primary);">Baca</span>
+          <h1 class="welcome-title">
+            Belajar<span>Baca</span>
           </h1>
-          <p style="font-size: 1.25rem; color: var(--text-secondary); margin-bottom: 3.5rem; font-weight: 400; letter-spacing: 0.01em; opacity: 0; animation: fadeUp var(--duration-slow) var(--ease-out) 1.2s forwards;">Belajar berbahasa, belajar berbudaya</p>
+          <p class="welcome-tagline">Belajar berbahasa, belajar berbudaya</p>
           
-          <button class="btn btn--primary btn--lg" data-action="next-welcome" style="min-width: 200px; border-radius: 9999px; font-size: 1.125rem; height: 56px; opacity: 0; animation: fadeUp var(--duration-slow) var(--ease-out) 1.4s forwards;">
+          <button class="btn btn--primary btn--lg welcome-btn" data-action="next-welcome">
             Mulai Sekarang →
           </button>
         </div>
@@ -111,7 +111,7 @@ export function renderOnboarding(container) {
   container.innerHTML = `
     <div class="onboarding" role="region" aria-label="Pengaturan Profil">
       
-      <div class="onboarding__header" style="text-align: center;">
+      <div class="onboarding__header">
         <h2 class="onboarding__question">${step.question}</h2>
         <p class="onboarding__hint">${step.hint}</p>
       </div>
@@ -121,11 +121,11 @@ export function renderOnboarding(container) {
           ${step.options.map(step.renderOption).join('')}
         </div>
 
-        <div class="onboarding__actions" style="display: flex; justify-content: center; gap: 24px; width: 100%; margin: 3rem auto 0; align-items: center;">
+        <div class="onboarding__actions">
           ${onboardingStep > 0
-            ? '<button class="btn btn--ghost" data-action="back" style="min-width: 120px; font-weight: 600;">← Kembali</button>'
-            : '<div style="min-width: 120px; display: none;"></div>'}
-          <button class="btn btn--primary" data-action="next" ${selectedValue ? '' : 'disabled aria-disabled="true"'} style="min-width: 120px; font-weight: 600;">Lanjut →</button>
+            ? '<button class="btn btn--ghost" data-action="back">← Kembali</button>'
+            : '<div class="onboarding__spacer"></div>'}
+          <button class="btn btn--primary" data-action="next" ${selectedValue ? '' : 'disabled aria-disabled="true"'}>Lanjut →</button>
         </div>
 
         <div class="onboarding__progress" aria-label="Langkah ${onboardingStep} dari ${STEPS.length - 1}">
