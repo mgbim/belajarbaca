@@ -85,15 +85,6 @@ export function renderReader(container) {
               <h1 class="reader__section-title">${topic}</h1>
             </div>
             
-            <div class="reader-actions-container">
-               <button id="btn-global-read-aloud" onclick="window.startReadAlongMode()" class="reader-action-btn reader-action-btn--primary">
-                  <span class="material-symbols-outlined">record_voice_over</span> Mode Membaca Nyaring
-               </button>
-               <button onclick="if(window.openAiDiscussion) window.openAiDiscussion()" class="reader-action-btn reader-action-btn--secondary">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path><line x1="12" y1="9" x2="12" y2="15"></line><line x1="9" y1="12" x2="15" y2="12"></line></svg> Teman Diskusi
-               </button>
-            </div>
-            
             <aside class="reader__sidebar reader__sidebar--mobile" role="navigation" aria-label="Daftar Isi">
               <h2 class="reader__sidebar-title" style="margin-top: 0; display: flex; align-items: center; gap: 6px;">
                 <span class="material-symbols-outlined" style="color: var(--color-primary); font-size: 20px;">format_list_bulleted</span>
@@ -103,6 +94,15 @@ export function renderReader(container) {
                 <div style="font-size: 0.9rem; color: var(--text-muted); padding: 0 16px;">Memuat daftar isi...</div>
               </nav>
             </aside>
+
+            <div class="reader-actions-container">
+               <button id="btn-global-read-aloud" onclick="window.startReadAlongMode()" class="reader-action-btn reader-action-btn--primary">
+                  <span class="material-symbols-outlined">record_voice_over</span> Mode Membaca Nyaring
+               </button>
+               <button onclick="if(window.openAiDiscussion) window.openAiDiscussion()" class="reader-action-btn reader-action-btn--secondary">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path><line x1="12" y1="9" x2="12" y2="15"></line><line x1="9" y1="12" x2="15" y2="12"></line></svg> Teman Diskusi
+               </button>
+            </div>
             
             <div class="reader-section-block" style="border-radius: 12px; transition: background 0.3s; padding: 0; text-align: left; margin: 0; width: 100%;">
                 <div class="ai-streaming-content" style="line-height: 1.8; font-size: 1.1rem; color: var(--text-primary); text-align: left;"></div>
