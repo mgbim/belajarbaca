@@ -2391,3 +2391,122 @@ h4 {
   #ai-current-text { font-size: 1.5rem !important; margin-bottom: 1rem !important; min-height: 80px !important; }
   .ai-spectrum-canvas { margin-bottom: 1rem !important; height: 60px !important; }
 }
+
+/* --- Mobile Responsiveness Fixes --- */
+@media (max-width: 768px) {
+  /* Global & Typography */
+  html { font-size: 100%; } /* Prevent overflow by slightly reducing base size */
+  body { overflow-x: hidden; }
+
+  /* Header */
+  .app-header {
+    padding: 0 var(--space-4);
+    min-height: 70px;
+  }
+  .app-header__inner {
+    padding: 12px 16px;
+    margin: 1rem auto 0;
+    width: calc(100% - 16px);
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .app-header__nav-list {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  /* Onboarding */
+  .onboarding {
+    padding-left: var(--space-4);
+    padding-right: var(--space-4);
+    padding-top: 10vh;
+  }
+  .onboarding__question {
+    font-size: 1.8rem;
+  }
+  .onboarding__option {
+    min-height: 120px;
+  }
+  .onboarding__grid {
+    display: flex; /* Reset from grid if previous media query applied */
+  }
+
+  /* Reader */
+  .reader-layout {
+    width: calc(100% - 16px);
+    margin: 0.5rem auto;
+    padding: 1rem 16px;
+  }
+  .reader__main {
+    padding: 1rem 0;
+  }
+  .reader__section-title {
+    font-size: var(--text-2xl);
+  }
+  
+  /* Glossary Popup */
+  .glossary-popup {
+    width: calc(100vw - 32px) !important;
+    max-width: 300px;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
+
+  /* Generate View */
+  .generate__hero {
+    padding-top: 10vh;
+  }
+  .generate__title {
+    font-size: 2rem;
+  }
+  .generate__filters {
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .generate__filters::-webkit-scrollbar { display: none; }
+  .generate__filter-chip {
+    white-space: nowrap;
+  }
+  .generate__carousel {
+    padding-left: var(--space-4);
+    padding-right: var(--space-4);
+  }
+  .generate__carousel .generate__card {
+    flex: 0 0 85vw;
+  }
+  
+  /* Quiz */
+  .quiz {
+    padding: var(--space-6) var(--space-4);
+  }
+  .quiz__title {
+    font-size: var(--text-xl);
+  }
+  .quiz__score {
+    font-size: var(--text-3xl);
+  }
+}
+
+@media (max-width: 480px) {
+  /* Stack onboarding options on very small screens */
+  .onboarding__option {
+    width: 100% !important;
+  }
+  .onboarding__grid {
+    flex-direction: column;
+  }
+  .app-header__inner {
+    padding: 8px;
+  }
+  .app-header__tab {
+    padding: 6px 12px;
+    min-width: unset;
+  }
+  .app-logo__text {
+    font-size: 1.25rem;
+  }
+}
