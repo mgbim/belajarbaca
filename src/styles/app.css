@@ -1417,10 +1417,15 @@ h4 {
 @media (max-width: 600px) {
   .reader-actions-container {
     margin-top: 1rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
   }
   .reader-action-btn {
-    width: 100%;
-    flex: 1 1 100%;
+    width: auto;
+    flex: 0 0 auto;
+    font-size: 0.85rem;
+    padding: 8px 16px;
   }
 }
 
@@ -2570,13 +2575,12 @@ h4 {
   }
 
   /* Reader */
-  .reader-layout {
+  .reader {
     width: calc(100% - 32px);
     margin: 1rem auto;
-    padding: 24px 20px;
   }
   .reader__main {
-    padding: 0;
+    padding: 24px 20px;
   }
   .reader__section-title {
     font-size: var(--text-2xl);
