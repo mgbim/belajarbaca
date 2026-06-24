@@ -2386,7 +2386,7 @@ h4 {
   .ai-discussion-main {
     flex: 0 0 35vh; padding: 1.5rem;
   }
-  .ai-discussion-close-desktop { display: none !important; }
+  .ai-discussion-actions-desktop { display: none !important; }
   .ai-discussion-close-mobile { display: flex !important; }
   #ai-current-text { font-size: 1.5rem !important; margin-bottom: 1rem !important; min-height: 80px !important; }
   .ai-spectrum-canvas { margin-bottom: 1rem !important; height: 60px !important; }
@@ -2492,12 +2492,26 @@ h4 {
 }
 
 @media (max-width: 480px) {
-  /* Stack onboarding options on very small screens */
+  /* Prevent zooming by forcing 16px minimum on inputs */
+  input, textarea, select {
+    font-size: 16px !important;
+  }
+  
+  /* Compact 2-column layout for onboarding options */
   .onboarding__option {
-    width: 100% !important;
+    width: calc(50% - 8px) !important;
+    min-height: 100px;
+    padding: 10px;
+    gap: 8px;
+    font-size: 0.85rem;
+  }
+  .onboarding__option-icon {
+    font-size: 1.5rem;
   }
   .onboarding__grid {
-    flex-direction: column;
+    flex-direction: row; /* Revert to row to maintain 2 columns */
+    flex-wrap: wrap;
+    gap: 12px;
   }
   .app-header__inner {
     padding: 8px;
