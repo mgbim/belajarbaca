@@ -2648,27 +2648,41 @@ h4 {
     font-size: 16px !important;
   }
   
-  /* Compact 2-column layout for onboarding options */
+  /* Mobile 1-column list layout for onboarding options */
   .onboarding__option {
-    width: calc(50% - 6px) !important;
-    min-height: 90px;
-    padding: 8px;
-    gap: 6px;
-    font-size: 0.85rem;
+    width: 100% !important;
+    min-height: 72px;
+    padding: 16px 20px;
+    gap: 16px;
+    font-size: 1.1rem;
+    flex-direction: row; /* Icon and text side-by-side */
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: var(--radius-lg);
   }
   .onboarding__option-icon {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px; /* Fixed width to align text perfectly */
   }
-  .opt-flag-img { width: 36px; height: 26px; }
+  .opt-flag-img { width: 40px; height: 30px; object-fit: cover; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
   .opt-icon { font-size: 32px; }
-  .opt-level-code { font-size: 1.25rem; }
-  .opt-level-title { font-size: 0.85rem; }
-  .opt-level-desc { font-size: 0.7rem; }
+  .opt-level-code { font-size: 1.4rem; width: 48px; text-align: center; }
+  .opt-level-title { font-size: 1rem; }
+  .opt-level-desc { font-size: 0.85rem; text-align: left; }
+
+  /* Ensure text aligns left when in row layout */
+  .onboarding__option > div {
+    align-items: flex-start !important;
+    text-align: left !important;
+  }
 
   .onboarding__grid {
-    flex-direction: row; /* Revert to row to maintain 2 columns */
-    flex-wrap: wrap;
-    gap: 10px;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 12px;
   }
   .onboarding__actions {
     gap: 12px;
